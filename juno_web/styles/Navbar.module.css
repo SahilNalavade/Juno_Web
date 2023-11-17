@@ -1,0 +1,72 @@
+/* styles/Navbar.module.css */
+
+
+.navbar {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    border-right: 1px solid #E4E4E4; /* Add a border on the right side */
+  }
+  
+  .hamburger {
+    cursor: pointer;
+    display: none; /* Initially hide the hamburger icon */
+    flex-direction: column;
+  }
+  
+  .hamburger > div {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  .navList {
+    display: flex;
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    flex-direction: column;
+    height: 100vh; /* Full screen height */
+    width: 258px; /* Fixed width */
+  }
+  
+  .navList li {
+    margin-right: 20px;
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 768px) {
+    .navbar {
+
+      flex-direction: column;
+    }
+  
+    .hamburger {
+      display: flex; /* Display the hamburger icon in small screens */
+    }
+  
+    .navList {
+      flex-direction: column !important; /* Display menu items one below the other */
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      color:#000;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  
+    .navList.show {
+      opacity: 1;
+    }
+  }
+  
+  
