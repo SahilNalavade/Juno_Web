@@ -1,22 +1,16 @@
-
-
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const NotFound = () => {
   return (
-    <div style={{ textAlign: 'center',background:'#fff' ,height:'100vh',paddingTop: '5%',color:'#000'}}>
-      <img
-        src="/logot.png"  
-        alt="Error Image"
-        style={{ maxWidth: '30%', height: 'auto', marginBottom:'5%' }}
-      />
+    <div style={{ textAlign: 'center', background: '#fff', height: '100vh', paddingTop: '5%', color: '#000' }}>
+      <Image src="/logot.png" alt="Logo" width={200} height={90} />
       <h1>404 - Page Not Found</h1>
       <p>Looks like you've stumbled upon the land of mischievous 404 errors.</p>
-      
-   
+
       <Link href="/">
-        <div style={{ textDecoration: 'none', padding: '10px 20px', background: '#4643EE', color: '#fff', borderRadius: '5px', marginTop: '20px', display: 'inline-block', marginTop:'20%' }}>
+        <div style={{ textDecoration: 'none', padding: '10px 20px', background: '#4643EE', color: '#fff', borderRadius: '5px', marginTop: '20px', display: 'inline-block', marginTop: '20%' }}>
           Go Back Home
         </div>
       </Link>
