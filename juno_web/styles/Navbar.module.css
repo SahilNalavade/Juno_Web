@@ -55,12 +55,10 @@
   /* styles/Navbar.module.css */
 
 /* ... Your existing styles ... */
-
 /* Media query for small screens */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    
   }
 
   .hamburger {
@@ -73,16 +71,17 @@
     top: 70px;
     left: 0;
     width: 100%;
- 
     background-color: #fff; /* Set the background color to white */
     color: #000;
     padding: 20px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     z-index: 1; /* Ensure the navList appears on top of other elements */
+    display: none; /* Hide the navList initially */
   }
 
   .navList.show {
+    display: flex; /* Show the navList when the "show" class is applied */
     opacity: 1;
   }
 

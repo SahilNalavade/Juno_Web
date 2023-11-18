@@ -12,6 +12,8 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+
   return (
     <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
       <div className={styles.hamburger} onClick={toggleMenu}>
