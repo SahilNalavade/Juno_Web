@@ -14,7 +14,7 @@ body.dark-mode {
 .dashboard {
   flex-grow: 1;
   padding: 20px;
-  margin-top:48px;
+  margin-top:20px;
   margin-left:2%;
 }
 
@@ -110,3 +110,42 @@ body.dark-mode {
   height: 20px; /* Adjust the height of the icon */
   margin-right: 10px; /* Adjust the margin between the icon and text */
 }
+
+
+.selectInput {
+  background:#F5F5F5;
+  width: 142px;
+  height: 34px;
+  padding: 8px 12px;
+  border-radius: 7px;
+  gap: 6px;
+  margin:0px 16px 23px 16px;
+  color:#777676;
+}
+
+.selectInput2 {
+  background:#F5F5F5;
+  color:#777676;
+  width: 109px;
+  height: 34px;
+  padding: 8px 12px;
+  border-radius: 7px;
+  gap: 6px;
+  position:relative;
+}
+
+.option {
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #777676;
+}
+
+.option:hover {
+  background: #ddd; /* Change the background color on hover as needed */
+}
+
+.option:active {
+  background: #ccc; /* Change the background color on click as needed */
+}
+
