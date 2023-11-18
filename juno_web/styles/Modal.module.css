@@ -1,4 +1,4 @@
-/* styles/Modal.module.css */
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -20,28 +20,25 @@
   height: 465px;
 }
 
-/* styles/Modal.module.css */
-/* ... (existing styles) */
 
 .modalHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    font-family: 'Lettera Text LL', sans-serif; /* Apply the specified font-family */
+    font-family: 'Lettera Text LL', sans-serif;
   }
   
   .modalHeader h2 {
-    font-size: 24px; /* Apply the specified font-size */
-    font-weight: 500; /* Apply the specified font-weight */
-    line-height: 18px; /* Apply the specified line-height */
-    letter-spacing: 0px; /* Apply the specified letter-spacing */
-    text-align: left; /* Apply the specified text-align */
+    font-size: 24px; 
+    font-weight: 500; 
+    line-height: 18px;
+    letter-spacing: 0px; 
+    text-align: left;
     weight:600;
 
   }
-  
-  /* ... (existing styles) */
+
   
 
 .closeButton {
@@ -49,8 +46,7 @@
     border: none;
     background: none;
     font-size: 20px;
-    font-weight: bold; /* Make the close button bold */
-    color: #333;
+    font-weight: bold;     color: #333;
 }
 
 .formGroup {
@@ -66,12 +62,12 @@
 .form label {
     display: block;
     margin-bottom: 5px;
-    font-family: 'Lettera Text LL', sans-serif; /* Apply the specified font-family */
-    font-size: 14px; /* Apply the specified font-size */
-    font-weight: 400; /* Apply the specified font-weight */
-    line-height: 18px; /* Apply the specified line-height */
-    letter-spacing: 0px; /* Apply the specified letter-spacing */
-    text-align: left; /* Apply the specified text-align */
+    font-family: 'Lettera Text LL', sans-serif; 
+    font-size: 14px;
+    font-weight: 400; 
+    line-height: 18px; 
+    letter-spacing: 0px; 
+    text-align: left; 
     color:#777676;
   }
 
@@ -83,7 +79,7 @@
   margin-top: 5px;
   background: #fff;
   color: #000;
-  border: 1px solid #E4E4E4; /* Added a border for better visibility */
+  border: 1px solid #E4E4E4;
 }
 
 .fileUAR {
@@ -106,8 +102,8 @@
 
 .buttonGroup {
 
-    width: 211px; /* Removed single quotes */
-    height: 48px; /* Removed single quotes */
+    width: 211px; 
+    height: 48px; 
     padding: 16px;
     border-radius: 8px;
     background: #E4E4E4;
@@ -132,24 +128,24 @@
   
   .form input[type="radio"] {
     margin-right: 5px;
-    appearance: none; /* Remove default appearance */
-    width: 20px; /* Set the width of the radio button */
-    height: 20px; /* Set the height of the radio button */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 50%; /* Make it a circle */
-    background-color: #fff; /* Background color */
+    appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 50%; 
+    background-color: #fff; 
     cursor: pointer;
   }
   
   .form input[type="radio"]:checked {
-    background-color: #000; /* Change background color when checked */
-    border-color: #fff; /* Change border color when checked */
+    background-color: #000; 
+    border-color: #fff; 
   }
 
   .responsiveTable {
     font-family: "'Lettera Text LL', sans-serif";
     width: 100%;
-    height: auto; /* Adjust height as needed */
+    height: auto; 
     border-collapse: collapse;
     border: 1px solid #E4E4E4;
   }

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
-import Modal from '@/components/Modal'; // Import the Modal component
+import Modal from '@/components/Modal';
 import styles from '@/styles/Home.module.css';
 import UserTable from '../components/UserTable';
 import CompletedUserTable from '../components/CompletedUserTable'
@@ -9,9 +9,8 @@ import CompletedUserTable from '../components/CompletedUserTable'
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [jsonData, setJsonData] = useState({ data: [] });
 
-
- // Inside the Home component
 
 const handleTabChange = (index) => {
   console.log('Tab changed:', index);
@@ -28,118 +27,31 @@ const handleButtonClick = () => {
     setShowModal(false);
   };
 
-  const jsonData = {
-    data: [
-      // ... your JSON data here
-      
-        {
-          "name": "Sam Altman",
-          "risk_level": "Medium",
-          "trigger_reason": "IP Change",
-          "action_reason": "Flagged",
-          "action_taken_by": {
-            "name": "Neil",
-            "email": "neil@onjuno.com"
-          },
-          "in_queue_for": "14 days",
-          "date_added_on": "12 Oct, 2023",
-          "email": "samaltman123@gmail.com",
-          "previously_reviewed": "Yes",
-          "previously_reviewed_date": "23 Aug, 2023"
-        },
-        {
-          "name": "Sameer Choubey",
-          "risk_level": "High",
-          "trigger_reason": "FIFO",
-          "action_reason": "Closed",
-          "action_taken_by": {
-            "name": "Pratik",
-            "email": "pratik@onjuno.com"
-          },
-          "in_queue_for": "14 days",
-          "date_added_on": "12 Oct, 2023",
-          "email": "sameerchoubey123@gmail.com",
-          "previously_reviewed": "No"
-        },
-        {
-          "name": "Adarsh Panikkar",
-          "risk_level": "Low",
-          "trigger_reason": "IP Change",
-          "action_reason": "Cleared",
-          "action_taken_by": {
-            "name": "Prashanth",
-            "email": "prashanth@onjuno.com"
-          },
-          "in_queue_for": "15 days",
-          "date_added_on": "12 Oct, 2023",
-          "email": "adarsh@onjuno.com",
-          "previously_reviewed": "No",
-          "previously_reviewed_date": "12 Sep, 2023"
-        },
-        {
-          "name": "Pratik Shetty",
-          "risk_level": "High",
-          "trigger_reason": "FIFO",
-          "action_reason": "SOI requested",
-          "action_taken_by": {
-            "name": "Rasleen Kaur",
-            "email": "rasleen@onjuno.com"
-          },
-          "in_queue_for": "15 days",
-          "date_added_on": "12 Oct, 2023",
-          "email": "pratik3@gmail.com",
-          "previously_reviewed": "Yes",
-          "previously_reviewed_date": "12 Sep, 2023"
-        },
-        {
-          "name": "Elon Musk",
-          "risk_level": "Low",
-          "trigger_reason": "FIFO",
-          "action_reason": "Flagged",
-          "action_taken_by": {
-            "name": "Pratik Shetty",
-            "email": "pratik@onjuno.com"
-          },
-          "in_queue_for": "15 days",
-          "date_added_on": "12 Oct, 2023",
-          "email": "elon@twitterceo.com",
-          "previously_reviewed": "Yes",
-          "previously_reviewed_date": "12 Sep, 2023"
-        },
-        {
-          "name": "Trina Kundu",
-          "risk_level": "Low",
-          "trigger_reason": "FIFO",
-          "action_reason": "Closed",
-          "action_taken_by": {
-            "name": "Varun Deshpande",
-            "email": "varun@onjuno.com"
-          },
-          "in_queue_for": "15 days",
-          "date_added_on": "12 Oct, 2023",
-          "email": "trina@onjuno.com",
-          "previously_reviewed": "Yes",
-          "previously_reviewed_date": "12 Sep, 2023"
-        }
-      
-      
-    ],
-  };
+  useEffect(() => {
+    // Fetch data from data.json
+    const fetchData = async () => {
+      const response = await fetch('/data.json');
+      const data = await response.json();
+      setJsonData(data);
+    };
+
+    fetchData();
+  }, []); 
 
   return (
     <>
       <Head>
         <title>Responsive Dashboard</title>
-        {/* Add meta tags as needed */}
+  
       </Head>
 
       <div className={styles.container}>
         <Navbar />
         <main className={styles.dashboard}>
-          {/* Dashboard content */}
+      
           <h1>Monitoring</h1>
 
-          {/* Tabs */}
+  
           <div className={styles.tabs}>
           <ul className={styles.tabList}>
           <li className={activeTab === 0 ? `${styles.tabListItem} ${styles.activeTab}` : styles.tabListItem} onClick={() => handleTabChange(0)}>
@@ -155,11 +67,10 @@ const handleButtonClick = () => {
         </button>
           </div>
 
-          {/* Tab content */}
           <div className={styles.tabContent}>
           {activeTab === 0 && (
               <div>
-                {/* Display the UserTable component with JSON data */}
+         
                 <UserTable data={jsonData.data} />
               </div>
             )}

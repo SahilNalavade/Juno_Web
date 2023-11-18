@@ -1,18 +1,17 @@
-// components/Modal.js
 import { useState } from 'react';
 import styles from '@/styles/Modal.module.css';
 
 const Modal = ({ handleClose }) => {
   const [email, setEmail] = useState('');
-  const [fileUAR, setFileUAR] = useState(''); // You can use true/false for Yes/No options
-  const [chargeClosureFee, setChargeClosureFee] = useState(''); // Initial value can be an empty string or 'yes'/'no'
+  const [fileUAR, setFileUAR] = useState(''); 
+  const [chargeClosureFee, setChargeClosureFee] = useState(''); 
 
   const [reason, setReason] = useState('');
   const [note, setNote] = useState('');
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Add your logic to handle form submission
+
   };
 
   return (
@@ -65,7 +64,7 @@ const Modal = ({ handleClose }) => {
   id="reason"
   value={reason}
   onChange={(e) => setReason(e.target.value)}
-  className="form-input" // You can add a class for styling if needed
+  className="form-input" 
   style={{
     width: '100%',
     padding: '8px',
@@ -74,7 +73,7 @@ const Modal = ({ handleClose }) => {
     background: '#fff',
     color: '#000',
     border: '1px solid #ccc',
-    borderRadius: '4px', // Added border radius for consistency
+    borderRadius: '4px',
   }}
 >
   <option value="option1"></option>  
@@ -95,7 +94,7 @@ const Modal = ({ handleClose }) => {
   value={note}
   onChange={(e) => setNote(e.target.value)}
   style={{
-    resize: 'none', // Disable resizing
+    resize: 'none', 
     height:'65px'
     
   }}
@@ -121,7 +120,7 @@ const Modal = ({ handleClose }) => {
     padding: '16px',
     borderRadius: '8px',
     marginLeft: '8px',
-    backgroundColor: '#E4E4E4', // Add your desired background color here
+    backgroundColor: '#E4E4E4', 
     border:'none',
     color:'#ADADAD',
     marginLeft:'70px'

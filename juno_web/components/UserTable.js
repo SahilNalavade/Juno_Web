@@ -12,18 +12,16 @@ const UserTable = ({ data }) => {
   const [riskLevels, setRiskLevels] = useState([]);
 
   useEffect(() => {
-    // Extract unique trigger reasons for filtering options
+  
     const uniqueTriggerReasons = [
       ...new Set(data.map((user) => user.trigger_reason)),
     ];
     setTriggerReasons(uniqueTriggerReasons);
 
-    // Extract unique risk levels for filtering options
     const uniqueRiskLevels = [...new Set(data.map((user) => user.risk_level))];
     setRiskLevels(uniqueRiskLevels);
   }, [data]);
 
-  // Helper function to get the sort icon based on the sort order
   const getSortIcon = (criteria, defaultOrder) => {
     const currentSortOrder =
       sortCriteria === criteria ? sortOrder : defaultOrder;
@@ -31,21 +29,19 @@ const UserTable = ({ data }) => {
     return currentSortOrder === 'asc' ? '▲' : '▼';
   };
 
-  // Sorting function
   const sortByCriteria = (criteria) => {
     if (sortCriteria === criteria) {
-      // Toggle the sort order if the same criteria is clicked again
+    
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else {
-      // Set the new sorting criteria and default to ascending order
+   
       setSortCriteria(criteria);
       setSortOrder('asc');
     }
   };
 
-  // Use useEffect to run the sorting and filtering logic
   useEffect(() => {
-    // Apply filtering based on search term, trigger reason, and risk level
+ 
     const filtered = data.filter(
       (user) =>
         Object.values(user).some((value) =>
@@ -57,13 +53,13 @@ const UserTable = ({ data }) => {
         (filterRiskLevel ? user.risk_level === filterRiskLevel : true)
     );
 
-    // Apply sorting based on sort criteria and order
+
     if (sortCriteria) {
       filtered.sort((a, b) => {
         const aValue = a[sortCriteria];
         const bValue = b[sortCriteria];
 
-        // Adjust the comparison based on data type
+   
         if (typeof aValue === 'string' || typeof bValue === 'string') {
           return sortOrder === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
         } else if (typeof aValue === 'number' || typeof bValue === 'number') {
@@ -72,18 +68,18 @@ const UserTable = ({ data }) => {
           return sortOrder === 'asc' ? aValue - bValue : bValue - aValue;
         }
 
-        // Default to string comparison if the data type is not recognized
+   
         return sortOrder === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
       });
     }
 
-    // Update the state with the filtered and sorted data
+
     setFilteredData(filtered);
   }, [searchTerm, filterTriggerReason, filterRiskLevel, sortCriteria, sortOrder, data]);
 
   return (
     <div>
-      {/* Search input */}
+
       <input
       type="text"
       placeholder="Search"
@@ -104,7 +100,7 @@ const UserTable = ({ data }) => {
       }}
     />
 
-      {/* Filter by trigger reason */}
+   
       <select
         value={filterTriggerReason}
         onChange={(e) => setFilterTriggerReason(e.target.value)}
@@ -118,7 +114,7 @@ const UserTable = ({ data }) => {
         ))}
       </select>
 
-      {/* Filter by risk level */}
+
       <select
         value={filterRiskLevel}
         onChange={(e) => setFilterRiskLevel(e.target.value)}
@@ -132,7 +128,7 @@ const UserTable = ({ data }) => {
           </option>
         ))}
       </select>
-  {/* Filter by trigger reason */}
+
  
 
   <div className={styles.tableContainer}>
@@ -149,7 +145,7 @@ const UserTable = ({ data }) => {
               </th>
               <th
                 className={styles.tableHeader}
-                onClick={() => sortByCriteria('in_queue_for')}
+               
               >
                 Trigger Reason{' '}
                 
@@ -207,26 +203,20 @@ const UserTable = ({ data }) => {
   </tbody>
 </table>
 </div>
-
-
-
-
-
-
     </div>
   );
 };
-// Add a helper function to determine the color based on risk level
+
 const getRiskLevelColor = (riskLevel) => {
   switch (riskLevel) {
     case 'Medium':
-      return '#88670F'; // Choose the color for Medium risk level
+      return '#88670F'; 
     case 'High':
-      return '#7D2424'; // Choose the color for High risk level
+      return '#7D2424'; 
     case 'Low':
-      return '#006540'; // Choose the color for Low risk level
+      return '#006540';
     default:
-      return 'black'; // Default color
+      return 'black';
   }
 };
 

@@ -24,7 +24,7 @@ body.dark-mode {
   height: 41px;
  
  
-  font-family: 'Lettera Text LL', sans-serif; /* Apply the specified font-family */
+  font-family: 'Lettera Text LL', sans-serif; 
 }
 
 @media (max-width: 768px) {
@@ -34,8 +34,8 @@ body.dark-mode {
 
   .selectInput,
   .selectInput2 {
-    width: 100%; /* Make the dropdowns full width on small screens */
-    margin: 10px 0; /* Add margin for spacing between the dropdowns */
+    width: 100%;
+    margin: 10px 0; 
   }
 
   .tabListItem {
@@ -50,8 +50,7 @@ body.dark-mode {
  
 }
 
-
-/* Home.module.css */
+/* Tabs */
 
 .tabs {
   margin-top: 20px;
@@ -67,32 +66,31 @@ body.dark-mode {
 
 .tabListItem {
   cursor: pointer;
-  margin-right: 30px; /* Adjust the distance between tabs */
+  margin-right: 30px; 
   margin-bottom: -2px;
-  color: #ADADAD ; /* Default tab color */
+  color: #ADADAD ; 
   position: relative;
 }
 
 
 /* Active tab styles */
 .activeTab {
-  color:#4643EE; /* Change tab color when active */
+  color:#4643EE; 
   position: relative;
 }
 
-/* Underline styles */
+
 .tabListItem::after {
   content: '';
   display: block;
   height: 2px;
   width: 0px;
-  background-color: #4643EE;; /* Initial underline color */
-  margin: 0 auto; /* Center the underline */
+  background-color: #4643EE;; 
+  margin: 0 auto;
 }
 
 .activeTab::after {
-  width: 100%; /* Set the active tab width to 120% */
-  /* margin-left: -10%; commenting this for now */
+  width: 100%; 
   margin-top:22px;
   
 }
@@ -102,7 +100,7 @@ body.dark-mode {
   margin-left: auto;
   margin-right: 20px;
   width: 152px;
-  height: 40px; /* Increase the height to 40px */
+  height: 40px; 
   border-radius: 7px;
   padding: 8px 16px 8px 40px;
   background: #F6D8D8;
@@ -123,9 +121,9 @@ body.dark-mode {
 }
 
 .addIcon {
-  width: 20px; /* Adjust the width of the icon */
-  height: 20px; /* Adjust the height of the icon */
-  margin-right: 10px; /* Adjust the margin between the icon and text */
+  width: 20px; 
+  height: 20px; 
+  margin-right: 10px; 
 }
 
 
@@ -159,24 +157,20 @@ body.dark-mode {
 }
 
 .option:hover {
-  background: #ddd; /* Change the background color on hover as needed */
+  background: #ddd; 
 }
 
 .option:active {
-  background: #ccc; /* Change the background color on click as needed */
+  background: #ccc; 
 }
 
-
-/* styles/Home.module.css */
 
 .tableContainer {
   width: 100%;
   overflow-x: auto;
 }
 
-/* styles/Home.module.css */
-
-/* ... (existing styles) */
+/* Table stlyes */
 
 .table {
   font-family: 'Lettera Text LL', sans-serif;
@@ -198,46 +192,37 @@ body.dark-mode {
 }
 
 .tableBody {
-  font-size: 14px; /* Adjust the desired font size for table body */
+  font-size: 14px; 
 }
 
 .tableRow {
-  /* Add any additional styles for table rows */
+ 
 }
 
 .tableDataCell {
-  /* Add styles for td elements in tbody */
-  padding: 10px; /* Adjust padding as needed */
-  border-bottom: 1px solid #E4E4E4; /* Example border-bottom style */
+  
+  padding: 10px; 
+  border-bottom: 1px solid #E4E4E4; 
 }
 
-/* ... (other existing styles) */
 
-
-/* ... (other existing styles) */
-
-/* styles/Home.module.css */
-
-/* ... (existing styles) */
-
-/* Media query for small screens */
 @media (max-width: 768px) {
   .table {
   
-    margin-left:-10px /* Adjust the desired font size for small screens */
+    margin-left:-10px
   }
 
   .tableHeader {
-    font-size: 10px; /* Adjust the font size for table headers */
+    font-size: 10px;
   }
 
   .tableRow {
-    font-size: 10px; /* Adjust the font size for table rows */
+    font-size: 10px;
   }
   .tableDataCell {
-    /* Add styles for td elements in tbody */
-    padding: 0px; /* Adjust padding as needed */
-    border-bottom: 1px solid #E4E4E4; /* Example border-bottom style */
+
+    padding: 0px; 
+    border-bottom: 1px solid #E4E4E4; 
   }
-  /* Add any other styles for small screens as needed */
+
 }
