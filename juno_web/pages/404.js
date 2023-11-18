@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 const NotFound = () => {
   return (
     <div style={{ textAlign: 'center', background: '#fff', height: '100vh', paddingTop: '5%', color: '#000' }}>
-      <Image src="/logot.png" alt="Logo" width={200} height={90} />
+
       <h1>404 - Page Not Found</h1>
       <p>Looks like you've stumbled upon the land of mischievous 404 errors.</p>
 
