@@ -136,7 +136,7 @@ const UserTable = ({ data }) => {
  
 
   <div style={{ width: '100%', overflowX: 'auto' }}>
-  <table style={{ fontFamily: "'Lettera Text LL', sans-serif", width: '1000px', height: '400px', top: '253px', left: '306px', borderCollapse: 'collapse', border: '1px solid #E4E4E4'}}>
+  <table style={{ fontFamily: "'Lettera Text LL', sans-serif", width: '100%', height: '400px', top: '253px', left: '306px', borderCollapse: 'collapse', border: '1px solid #E4E4E4'}}>
   <thead>
     <tr>
       <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', textAlign: 'left', paddingLeft: '22px', borderBottom: '1px solid #000' }}>User</th>

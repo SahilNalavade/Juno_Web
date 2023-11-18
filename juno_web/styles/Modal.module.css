@@ -146,4 +146,10 @@
     border-color: #fff; /* Change border color when checked */
   }
 
-  
+  .responsiveTable {
+    font-family: "'Lettera Text LL', sans-serif";
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+    border-collapse: collapse;
+    border: 1px solid #E4E4E4;
+  }

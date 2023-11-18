@@ -24,7 +24,7 @@ const Navbar = () => {
 
       <ul className={`${styles.navList} ${isMenuOpen ? styles.show : ''}`}>
         <li>
-          <img src='/logo.png' alt="Logo" style={{ width: '194px', marginTop: '20px', marginBottom: '48px' }} />
+          <img src='/logo.png' alt="Logo" className={`${styles.logoImage}`} />
         </li>
         <li className={router.pathname === '/overview' ? styles.selected : ''}>
           <Link href="/overview">Overview</Link>
