@@ -1,6 +1,7 @@
 body.dark-mode {
   background-color: #1e1e1e;
   color: #fff;
+  overflowX: 'auto'
 }
 
 .container {
@@ -30,6 +31,13 @@ body.dark-mode {
   .container {
     flex-direction: column;
   }
+  .tabListItem {
+    margin-bottom: 10px;
+  }
+
+  .addButton {
+    margin-top: 10px;
+  }
 
 }
 
@@ -38,7 +46,7 @@ body.dark-mode {
 
 .tabs {
   margin-top: 20px;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #E4E4E4;
   display: flex;
   font-family: 'Lettera Text LL', sans-serif;
 }
@@ -52,7 +60,7 @@ body.dark-mode {
   cursor: pointer;
   margin-right: 30px; /* Adjust the distance between tabs */
   margin-bottom: -2px;
-  color: #555; /* Default tab color */
+  color: #ADADAD ; /* Default tab color */
   position: relative;
 }
 
@@ -83,7 +91,7 @@ body.dark-mode {
 
 .addButton {
   margin-left: auto;
-  margin-right: 50px;
+  margin-right: 20px;
   width: 152px;
   height: 40px; /* Increase the height to 40px */
   border-radius: 7px;

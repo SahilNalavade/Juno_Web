@@ -144,7 +144,7 @@ const UserTable = ({ data }) => {
       <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }} onClick={() => sortByCriteria('in_queue_for')}>Action Reason {getSortIcon('in_queue_for')}</th>
       <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }}>In Queue For</th>
       <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }} onClick={() => sortByCriteria('date_added_on')}>Date Added On {getSortIcon('date_added_on')}</th>
-      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }}>Previously Reviewed</th>
+      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }}>Action taken by</th>
     </tr>
   </thead>
   <tbody>

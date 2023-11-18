@@ -11,13 +11,18 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false);
 
 
-  const handleTabChange = (index) => {
-    setActiveTab(index);
-  };
+ // Inside the Home component
 
-  const handleButtonClick = () => {
-    setShowModal(true);
-  };
+const handleTabChange = (index) => {
+  console.log('Tab changed:', index);
+  setActiveTab(index);
+};
+
+const handleButtonClick = () => {
+  console.log('Button clicked');
+  setShowModal(true);
+};
+
 
   const handleCloseModal = () => {
     setShowModal(false);
