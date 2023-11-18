@@ -136,6 +136,7 @@ const UserTable = ({ data }) => {
           <thead>
             <tr>
               <th className={styles.tableHeader}>User</th>
+              <th className={styles.tableHeader}></th>
               <th
                 className={styles.tableHeader}
                 onClick={() => sortByCriteria('risk_level')}
@@ -169,7 +170,14 @@ const UserTable = ({ data }) => {
             <strong>{user.name}</strong>
             <p> {user.email}</p>
           </div>
+          
         </td>
+        <td>
+      <a href="your_link_destination">
+        <img src="/link.png" alt="Link" width={20} height={20} />
+      </a>
+    
+</td>
         <td className={styles.tableDataCell} style={{ alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div
