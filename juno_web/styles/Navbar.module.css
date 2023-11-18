@@ -2,20 +2,25 @@
 
 
 .navbar {
-    display: flex;
-    font-family: 'Lettera Text LL', sans-serif;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    color: #000;
-    position: relative;
-    border-right: 1px solid #E4E4E4; /* Add a border on the right side */
-  }
+  display: flex;
+  font-family: 'Lettera Text LL', sans-serif;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  border-right: 1px solid #E4E4E4; /* Add a border on the right side */
+}
+
   
   .hamburger {
     cursor: pointer;
     display: none; /* Initially hide the hamburger icon */
     flex-direction: column;
+    position: absolute; /* Position the hamburger icon */
+    top: 20px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    z-index: 2; /* Ensure the hamburger appears on top of other elements */
   }
   
   .hamburger > div {

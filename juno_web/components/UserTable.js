@@ -24,11 +24,11 @@ const UserTable = ({ data }) => {
   }, [data]);
 
   // Helper function to get the sort icon based on the sort order
-  const getSortIcon = (criteria) => {
-    if (sortCriteria === criteria) {
-      return sortOrder === 'asc' ? '▲' : '▼';
-    }
-    return '';
+  const getSortIcon = (criteria, defaultOrder) => {
+    const currentSortOrder =
+      sortCriteria === criteria ? sortOrder : defaultOrder;
+
+    return currentSortOrder === 'asc' ? '▲' : '▼';
   };
 
   // Sorting function
@@ -135,28 +135,46 @@ const UserTable = ({ data }) => {
   {/* Filter by trigger reason */}
  
 
-  <div style={{ width: '100%', overflowX: 'auto' }}>
-  <table style={{ fontFamily: "'Lettera Text LL', sans-serif", width: '100%', height: '400px', top: '253px', left: '306px', borderCollapse: 'collapse', border: '1px solid #E4E4E4'}}>
-  <thead>
-    <tr>
-      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', textAlign: 'left', paddingLeft: '22px', borderBottom: '1px solid #000' }}>User</th>
-      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }} onClick={() => sortByCriteria('risk_level')}>Risk Level {getSortIcon('risk_level')}</th>
-      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }} onClick={() => sortByCriteria('in_queue_for')}>Trigger Reason {getSortIcon('in_queue_for')}</th>
-      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }}>In Queue For</th>
-      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }} onClick={() => sortByCriteria('date_added_on')}>Date Added On {getSortIcon('date_added_on')}</th>
-      <th style={{ background: '#E4E4E4', height: '48px', fontSize: '12px', borderBottom: '1px solid #000' }}>Previously Reviewed</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div className={styles.tableContainer}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th className={styles.tableHeader}>User</th>
+              <th
+                className={styles.tableHeader}
+                onClick={() => sortByCriteria('risk_level')}
+              >
+                Risk Level{' '}
+                {getSortIcon('risk_level', 'asc')}
+              </th>
+              <th
+                className={styles.tableHeader}
+                onClick={() => sortByCriteria('in_queue_for')}
+              >
+                Trigger Reason{' '}
+                
+              </th>
+              <th className={styles.tableHeader}>In Queue For</th>
+              <th
+                className={styles.tableHeader}
+                onClick={() => sortByCriteria('date_added_on')}
+              >
+                Date Added On{' '}
+                {getSortIcon('date_added_on', 'asc')}
+              </th>
+              <th className={styles.tableHeader}>Previously Reviewed</th>
+            </tr>
+          </thead>
+  <tbody className={styles.tableBody}>
     {filteredData.map((user, index) => (
-      <tr key={index} style={{ borderBottom: '1px solid #E4E4E4' }}>
-        <td style={{ textAlign: 'left', paddingLeft: '20px', fontSize: '14px' }}>
+      <tr key={index} className={styles.tableRow}>
+        <td className={styles.tableDataCell} style={{ textAlign: 'left', paddingLeft: '20px' }}>
           <div>
             <strong>{user.name}</strong>
             <p> {user.email}</p>
           </div>
         </td>
-        <td style={{ alignItems: 'center', fontSize: '14px' }}>
+        <td className={styles.tableDataCell} style={{ alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div
               style={{
@@ -168,13 +186,13 @@ const UserTable = ({ data }) => {
                 backgroundColor: getRiskLevelColor(user.risk_level),
               }}
             ></div>
-            <span style={{ color: getRiskLevelColor(user.risk_level), fontSize: '14px' }}>{user.risk_level}</span>
+            <span style={{ color: getRiskLevelColor(user.risk_level)}}>{user.risk_level}</span>
           </div>
         </td>
-        <td style={{ textAlign: 'center', fontSize: '14px', borderBottom: '1px solid #E4E4E4' }}>{user.trigger_reason}</td>
-        <td style={{ textAlign: 'center', fontSize: '14px', borderBottom: '1px solid #E4E4E4' }}>{user.in_queue_for}</td>
-        <td style={{ textAlign: 'center', fontSize: '14px', borderBottom: '1px solid #E4E4E4' }}>{user.date_added_on}</td>
-        <td style={{fontSize:'14px', paddingLeft: '25px'}}>
+        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' }}>{user.trigger_reason}</td>
+        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' }}>{user.in_queue_for}</td>
+        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' }}>{user.date_added_on}</td>
+        <td className={styles.tableDataCell} style={{ paddingLeft: '25px'}}>
         {user.previously_reviewed === 'Yes' ? (
           <>
             <p style={{fontWeight: 'bold' }}> Yes</p>

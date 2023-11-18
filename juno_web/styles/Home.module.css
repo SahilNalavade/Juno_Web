@@ -1,7 +1,7 @@
 body.dark-mode {
   background-color: #1e1e1e;
   color: #fff;
-  overflowX: 'auto'
+ 
 }
 
 .container {
@@ -31,6 +31,13 @@ body.dark-mode {
   .container {
     flex-direction: column;
   }
+
+  .selectInput,
+  .selectInput2 {
+    width: 100%; /* Make the dropdowns full width on small screens */
+    margin: 10px 0; /* Add margin for spacing between the dropdowns */
+  }
+
   .tabListItem {
     margin-bottom: 10px;
   }
@@ -39,6 +46,8 @@ body.dark-mode {
     margin-top: 10px;
   }
 
+  
+ 
 }
 
 
@@ -157,3 +166,78 @@ body.dark-mode {
   background: #ccc; /* Change the background color on click as needed */
 }
 
+
+/* styles/Home.module.css */
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* styles/Home.module.css */
+
+/* ... (existing styles) */
+
+.table {
+  font-family: 'Lettera Text LL', sans-serif;
+  width: 100%;
+  height: 400px;
+  top: 253px;
+  left: 306px;
+  border-collapse: collapse;
+  border: 1px solid #E4E4E4;
+}
+
+.tableHeader {
+  background: #E4E4E4;
+  height: 48px;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 22px;
+  border-bottom: 1px solid #000;
+}
+
+.tableBody {
+  font-size: 14px; /* Adjust the desired font size for table body */
+}
+
+.tableRow {
+  /* Add any additional styles for table rows */
+}
+
+.tableDataCell {
+  /* Add styles for td elements in tbody */
+  padding: 10px; /* Adjust padding as needed */
+  border-bottom: 1px solid #E4E4E4; /* Example border-bottom style */
+}
+
+/* ... (other existing styles) */
+
+
+/* ... (other existing styles) */
+
+/* styles/Home.module.css */
+
+/* ... (existing styles) */
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .table {
+  
+    margin-left:-10px /* Adjust the desired font size for small screens */
+  }
+
+  .tableHeader {
+    font-size: 10px; /* Adjust the font size for table headers */
+  }
+
+  .tableRow {
+    font-size: 10px; /* Adjust the font size for table rows */
+  }
+  .tableDataCell {
+    /* Add styles for td elements in tbody */
+    padding: 0px; /* Adjust padding as needed */
+    border-bottom: 1px solid #E4E4E4; /* Example border-bottom style */
+  }
+  /* Add any other styles for small screens as needed */
+}
