@@ -187,7 +187,7 @@ const UserTable = ({ data }) => {
       </tr>
     ))}
   </tbody>
-</table>;
+</table>
 </div>
 
 
