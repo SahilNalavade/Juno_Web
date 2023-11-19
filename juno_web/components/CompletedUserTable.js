@@ -12,18 +12,16 @@ const UserTable = ({ data }) => {
   const [riskLevels, setRiskLevels] = useState([]);
 
   useEffect(() => {
-    // Extract unique trigger reasons for filtering options
+  
     const uniqueTriggerReasons = [
       ...new Set(data.map((user) => user.trigger_reason)),
     ];
     setTriggerReasons(uniqueTriggerReasons);
 
-    // Extract unique risk levels for filtering options
     const uniqueRiskLevels = [...new Set(data.map((user) => user.risk_level))];
     setRiskLevels(uniqueRiskLevels);
   }, [data]);
 
-  // Helper function to get the sort icon based on the sort order
   const getSortIcon = (criteria, defaultOrder) => {
     const currentSortOrder =
       sortCriteria === criteria ? sortOrder : defaultOrder;
@@ -31,21 +29,19 @@ const UserTable = ({ data }) => {
     return currentSortOrder === 'asc' ? '▲' : '▼';
   };
 
-  // Sorting function
   const sortByCriteria = (criteria) => {
     if (sortCriteria === criteria) {
-      // Toggle the sort order if the same criteria is clicked again
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else {
-      // Set the new sorting criteria and default to ascending order
       setSortCriteria(criteria);
       setSortOrder('asc');
     }
   };
+  
+  const customRiskOrder = ['High', 'Medium', 'Low'];
 
-  // Use useEffect to run the sorting and filtering logic
   useEffect(() => {
-    // Apply filtering based on search term, trigger reason, and risk level
+ 
     const filtered = data.filter(
       (user) =>
         Object.values(user).some((value) =>
@@ -57,13 +53,20 @@ const UserTable = ({ data }) => {
         (filterRiskLevel ? user.risk_level === filterRiskLevel : true)
     );
 
-    // Apply sorting based on sort criteria and order
-    if (sortCriteria) {
+    if (sortCriteria === 'risk_level') {
+      filtered.sort((a, b) => {
+        const aValue = customRiskOrder.indexOf(a['risk_level']);
+        const bValue = customRiskOrder.indexOf(b['risk_level']);
+  
+        return sortOrder === 'asc' ? aValue - bValue : bValue - aValue;
+      });
+    }
+    else if (sortCriteria) {
       filtered.sort((a, b) => {
         const aValue = a[sortCriteria];
         const bValue = b[sortCriteria];
 
-        // Adjust the comparison based on data type
+   
         if (typeof aValue === 'string' || typeof bValue === 'string') {
           return sortOrder === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
         } else if (typeof aValue === 'number' || typeof bValue === 'number') {
@@ -72,12 +75,12 @@ const UserTable = ({ data }) => {
           return sortOrder === 'asc' ? aValue - bValue : bValue - aValue;
         }
 
-        // Default to string comparison if the data type is not recognized
+   
         return sortOrder === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
       });
     }
 
-    // Update the state with the filtered and sorted data
+
     setFilteredData(filtered);
   }, [searchTerm, filterTriggerReason, filterRiskLevel, sortCriteria, sortOrder, data]);
 
