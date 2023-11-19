@@ -1,30 +1,31 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Modal from '@/components/Modal';
 import styles from '@/styles/Home.module.css';
 import UserTable from '../components/UserTable';
-import CompletedUserTable from '../components/CompletedUserTable'
+import CompletedUserTable from '../components/CompletedUserTable';
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [jsonData, setJsonData] = useState({ data: [] });
+  const [darkMode, setDarkMode] = useState(false);
 
+  const handleTabChange = (index) => {
+    setActiveTab(index);
+  };
 
-const handleTabChange = (index) => {
-  console.log('Tab changed:', index);
-  setActiveTab(index);
-};
-
-const handleButtonClick = () => {
-  console.log('Button clicked');
-  setShowModal(true);
-};
-
+  const handleButtonClick = () => {
+    setShowModal(true);
+  };
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   useEffect(() => {
@@ -36,24 +37,29 @@ const handleButtonClick = () => {
     };
 
     fetchData();
-  }, []); 
+  }, []);
 
   return (
     <>
       <Head>
         <title>Responsive Dashboard</title>
-  
       </Head>
 
-      <div className={styles.container}>
-        <Navbar />
+      <div className={`${styles.container} ${darkMode ? styles['dark-mode'] : ''}`}>
+        <Navbar darkMode={darkMode}/>
         <main className={styles.dashboard}>
-      
-          <h1>Monitoring</h1>
-
-  
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between',marginRight:'30px' }}>
+  <h1>Monitoring</h1>
+  <button className={styles.darkModeButton} onClick={toggleDarkMode} style={{ marginLeft: '10px' }}>
+    {darkMode ? (
+      <img src="/light.png" style={{ width: '24px' }} alt="Sun" />
+    ) : (
+      <img src="/dark.png" style={{ width: '24px' }} alt="Moon" />
+    )}
+  </button>
+</div>
           <div className={styles.tabs}>
-          <ul className={styles.tabList}>
+            <ul className={styles.tabList}>
           <li className={activeTab === 0 ? `${styles.tabListItem} ${styles.activeTab}` : styles.tabListItem} onClick={() => handleTabChange(0)}>
             Pending
           </li>
@@ -61,10 +67,11 @@ const handleButtonClick = () => {
           Completed
           </li>
         </ul>
-
+       
         <button className={styles.addButton} onClick={() => handleButtonClick()}>
           Close account
         </button>
+       
           </div>
 
           <div className={styles.tabContent}>

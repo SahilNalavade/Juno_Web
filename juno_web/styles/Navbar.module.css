@@ -9,18 +9,18 @@
   background-color: #fff;
   color: #000;
   position: relative;
-  border-right: 1px solid #E4E4E4; /* Add a border on the right side */
+  border-right: 1px solid #E4E4E4; 
 }
 
   
   .hamburger {
     cursor: pointer;
-    display: none; /* Initially hide the hamburger icon */
+    display: none; 
     flex-direction: column;
-    position: absolute; /* Position the hamburger icon */
-    top: 20px; /* Adjust the top position as needed */
-    right: 20px; /* Adjust the right position as needed */
-    z-index: 2; /* Ensure the hamburger appears on top of other elements */
+    position: absolute;
+    top: 47px; 
+    right: 20px;
+    z-index: 2; 
   }
   
   .hamburger > div {
@@ -38,8 +38,8 @@
     padding: 20px;
     margin: 0;
     flex-direction: column;
-    height: 100vh; /* Full screen height */
-    width: 258px; /* Fixed width */
+    height: 100vh;
+    width: 258px; 
   }
   
   .navList li {
@@ -50,62 +50,61 @@
   
   .navList .selected {
     background-color: rgba(70, 67, 238, 0.1);
-    /* Add any other styles for the selected item */
-    width: 100%; /* Fill */
-    height: fit-content; /* Hug (40px) */
+    
+    width: 100%; 
+    height: fit-content;
     color:#4643EE;
     border-radius: 7px;
     gap: 12px;
   }
 
-  /* styles/Navbar.module.css */
-
-/* ... Your existing styles ... */
-/* Media query for small screens */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
   }
 
   .hamburger {
-    display: flex; /* Display the hamburger icon in small screens */
-    
+    display: flex;
   }
 
   .navList {
-    flex-direction: column !important; /* Display menu items one below the other */
+    flex-direction: column !important;
     position: absolute;
     top: 40px;
     left: 0;
     width: 100%;
-    background-color: #fff; /* Set the background color to white */
-    color: #000;
     padding: 0px 20px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    z-index: 1; /* Ensure the navList appears on top of other elements */
-    display: none; /* Hide the navList initially */
+    z-index: 1; 
+    display: none;
+    background-color: #fff;
+    color: #000;
+  }
+
+  .navbar.dark-mode .navList {
+    background-color: #292929; 
+    color: #ffffff; 
   }
 
   .navList.show {
-    display: flex; /* Show the navList when the "show" class is applied */
+    display: flex; 
     opacity: 1;
   }
 
-  
-
-  /* Add a pseudo-element to cover the rest of the screen */
-
 }
+
+
+
 
   
 @media (min-width: 769px) and (max-width: 1000px) {
   .navbar {
-    padding: 0 2px; /* Adjust the padding for the logo and nav list */
+    padding: 0 2px; 
   }
 
   .navList {
-    width: 230px; /* Set the desired width for the nav list */
+    width: 230px;
   }
 
   
@@ -121,7 +120,7 @@
 
 
 
-  /* styles/Navbar.module.css */
+
 .userSection {
   display: flex;
   align-items:center;
@@ -129,11 +128,11 @@
 }
 
 .userImageWrapper {
-  width: 32px; /* Set the desired size for the circular image wrapper */
+  width: 32px;
   height: 32px;
   overflow: hidden;
   border-radius: 50%;
-  margin-right: 12px; /* Adjust as needed */
+  margin-right: 12px; 
 }
 
 .userImage {
@@ -143,16 +142,16 @@
 }
 
 .userName {
-  font-family: 'Lettera Text LL', sans-serif; /* Specify the desired font */
+  font-family: 'Lettera Text LL', sans-serif; 
   font-size: 14px;
   font-weight: 600;
   line-height: 18px;
   letter-spacing: 0px; 
-  color: #050505 /* Set the desired text color */
+  color: #050505 
 }
 
 .additionalName{
-  font-family: 'Lettera Text LL', sans-serif; /* Specify the desired font */
+  font-family: 'Lettera Text LL', sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 18px;
@@ -162,13 +161,22 @@
 
 
 .userContainer {
-  margin-top: 120px; /* Adjust the margin as needed */
+  margin-top: 120px; 
 }
 
 @media (max-width: 768px) {
   .logoImage {
-    width: 30%; /* Adjust the desired width for the logo */
+    width: 30%; 
     margin-top: 20px;
     margin-bottom: 48px;
   }
+}
+
+.navbar.dark-mode {
+  background-color: #292929;
+  color: #ffffff;
+}
+
+.navbar.dark-mode .line {
+  background-color: #ffffff; 
 }

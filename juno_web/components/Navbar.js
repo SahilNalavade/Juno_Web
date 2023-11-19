@@ -1,10 +1,9 @@
-// components/Navbar.js
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from '@/styles/Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = ({ darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -12,19 +11,19 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  
-
   return (
-    <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
+    <nav className={`${styles.navbar} ${darkMode ? styles['dark-mode'] : ''}`}>
       <div className={styles.hamburger} onClick={toggleMenu}>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
+
+        
       </div>
 
       <ul className={`${styles.navList} ${isMenuOpen ? styles.show : ''}`}>
         <li>
-          <img src='/logo.png' alt="Logo" className={`${styles.logoImage}`} />
+          <img src='/logo2.png' alt="Logo" className={`${styles.logoImage}`} />
         </li>
         <li className={router.pathname === '/overview' ? styles.selected : ''}>
           <Link href="/overview">Overview</Link>

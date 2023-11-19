@@ -1,8 +1,4 @@
-body.dark-mode {
-  background-color: #1e1e1e;
-  color: #fff;
- 
-}
+
 
 .container {
   display: flex;
@@ -184,7 +180,7 @@ body.dark-mode {
 }
 
 .tableHeader {
-  background: #E4E4E4;
+  background: #D0D0D0;
   height: 48px;
   font-size: 12px;
   text-align: left;
@@ -228,4 +224,31 @@ body.dark-mode {
     border-bottom: 1px solid #E4E4E4; 
   }
 
+}
+
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .tabs {
+  border-bottom: 2px solid #333333;
+}
+
+
+.container.dark-mode {
+  background-color: #292929;
+  color: #ffffff;
+}
+
+
+.darkModeButton {
+  display:flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px; 
+  height: 24px; 
+  margin-left: 10px; 
 }
