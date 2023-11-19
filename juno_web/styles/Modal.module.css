@@ -100,17 +100,7 @@
   margin-top: 5px;
 }
 
-.buttonGroup {
 
-    width: 211px; 
-    height: 48px; 
-    padding: 16px;
-    border-radius: 8px;
-    background: #E4E4E4;
-    color: #ADADAD; 
-    border: none;
-    cursor: pointer;
-}
 
 .fileUAR {
     display: flex;
@@ -138,8 +128,10 @@
   }
   
   .form input[type="radio"]:checked {
-    background-color: #000; 
-    border-color: #fff; 
+    background-color: #4643EE;
+    border: 2px solid #fff;
+     /* Add a white border to the inner circle */
+    border-radius: 50%;
   }
 
   .responsiveTable {
@@ -149,5 +141,3 @@
     border-collapse: collapse;
     border: 1px solid #E4E4E4;
   }
-
- 

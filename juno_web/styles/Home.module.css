@@ -180,6 +180,7 @@ body.dark-mode {
   left: 306px;
   border-collapse: collapse;
   border: 1px solid #E4E4E4;
+  
 }
 
 .tableHeader {
@@ -189,6 +190,7 @@ body.dark-mode {
   text-align: left;
   padding-left: 22px;
   border-bottom: 1px solid #000;
+ 
 }
 
 .tableBody {
@@ -214,6 +216,7 @@ body.dark-mode {
 
   .tableHeader {
     font-size: 10px;
+    
   }
 
   .tableRow {

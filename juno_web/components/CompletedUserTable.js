@@ -84,25 +84,43 @@ const UserTable = ({ data }) => {
   return (
     <div>
       {/* Search input */}
+      
+
+<div style={{ position: 'relative', display: 'inline-block' }}>
       <input
-      type="text"
-      placeholder="Search"
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      style={{
-        width: '370px',
-        height: '40px',
-        marginTop:'36px',
-        padding: '8px 16px 8px 16px',
-        borderRadius: '9px 8px 8px 9px',
-        border: '1px solid',
-        gap: '10px',
-        background:'#FFFFFF',
-        border:'#E4E4E4 solid 1px',
-        color:'#000',
-         fontFamily: "'Lettera Text LL', sans-serif",
-      }}
-    />
+        type="text"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{
+          width: '370px',
+          height: '40px',
+          marginTop: '36px',
+          padding: '8px 16px 8px 40px',
+          borderRadius: '9px 8px 8px 9px',
+          border: '1px solid',
+          gap: '10px',
+          background: '#FFFFFF',
+          border: '#E4E4E4 solid 1px',
+          color: '#000',
+          fontFamily: "'Lettera Text LL', sans-serif",
+        }}
+      />
+      {searchTerm === '' && (
+        <div
+          style={{
+            position: 'absolute',
+            left: '12px',
+            top: '60%',
+           
+            width: '20px',
+            height: '20px',
+            backgroundImage: 'url("/search.png")', // Replace with the path to your placeholder image
+            backgroundSize: 'cover',
+          }}
+        />
+      )}
+    </div>
 
       {/* Filter by trigger reason */}
       <select
@@ -140,6 +158,7 @@ const UserTable = ({ data }) => {
           <thead>
             <tr>
               <th className={styles.tableHeader}>User</th>
+              <th className={styles.tableHeader}></th>
               <th
                 className={styles.tableHeader}
                 onClick={() => sortByCriteria('risk_level')}
@@ -174,8 +193,14 @@ const UserTable = ({ data }) => {
             <p> {user.email}</p>
           </div>
         </td>
+        <td className={styles.tableDataCell}>
+      <a href="your_link_destination">
+        <img src="/link.png" alt="Link" width={20} height={20} />
+      </a>
+    
+</td>
         <td className={styles.tableDataCell} style={{ alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center' ,fontWeight:'bold' }}>
             <div
               style={{
                 width: '10px',
@@ -189,8 +214,8 @@ const UserTable = ({ data }) => {
             <span style={{ color: getRiskLevelColor(user.risk_level)}}>{user.risk_level}</span>
           </div>
         </td>
-        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' }}>{user.action_reason}</td>
-        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' }}>{user.in_queue_for}</td>
+        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' , fontWeight:'bold' }}>{user.action_reason}</td>
+        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4', fontWeight:'bold' }}>{user.in_queue_for}</td>
         <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' }}>{user.date_added_on}</td>
         <td className={styles.tableDataCell} style={{ textAlign: 'left', paddingLeft: '20px'}}>
           <p style={{ fontWeight: 'bold' }}>{user.action_taken_by.name}</p>
