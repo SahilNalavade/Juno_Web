@@ -4,6 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Simple dashboard showing all the users currently in the monitoring queue who need to be reviewed for risky behaviour
 
+## Technology Stack
+
+This project is implemented using [Next.js](https://nextjs.org/) and styled with CSS, without relying on any external UI library.
 
 ## Demo
 

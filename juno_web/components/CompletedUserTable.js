@@ -14,7 +14,7 @@ const UserTable = ({ data }) => {
   useEffect(() => {
   
     const uniqueTriggerReasons = [
-      ...new Set(data.map((user) => user.trigger_reason)),
+      ...new Set(data.map((user) => user.action_reason)),
     ];
     setTriggerReasons(uniqueTriggerReasons);
 
@@ -48,7 +48,7 @@ const UserTable = ({ data }) => {
           value.toString().toLowerCase().includes(searchTerm.toLowerCase())
         ) &&
         (filterTriggerReason
-          ? user.trigger_reason === filterTriggerReason
+          ? user.action_reason === filterTriggerReason
           : true) &&
         (filterRiskLevel ? user.risk_level === filterRiskLevel : true)
     );
@@ -131,13 +131,17 @@ const UserTable = ({ data }) => {
         onChange={(e) => setFilterTriggerReason(e.target.value)}
         className={styles.selectInput}
       >
-        <option value="">Trigger Reason</option>
+        <option value="">action Reason</option>
         {triggerReasons.map((reason, index) => (
           <option key={index} value={reason}>
             {reason}
           </option>
         ))}
       </select>
+
+
+
+      
 
       {/* Filter by risk level */}
       <select
