@@ -225,7 +225,16 @@
     padding: 0px; 
     border-bottom: 1px solid #E4E4E4; 
   }
+  
+  .tabs {
+    
+    border:none;
+ 
+  }
+  
+ 
 
+  
 }
 
 
@@ -234,9 +243,7 @@
   color: #ffffff;
 }
 
-.dark-mode .tabs {
-  border-bottom: 2px solid #333333;
-}
+
 
 
 .container.dark-mode {
