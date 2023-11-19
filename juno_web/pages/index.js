@@ -42,8 +42,12 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Responsive Dashboard</title>
-      </Head>
+  <title>Monitoring Dashboard</title>
+  <meta name="description" content="A comprehensive monitoring dashboard for your data." />
+  <meta name="keywords" content="monitoring, dashboard, data, analytics" />
+  <meta name="author" content="Sahil Nalavade" />
+  <link rel="icon" href="/favicon.ico" />
+</Head>
 
       <div className={`${styles.container} ${darkMode ? styles['dark-mode'] : ''}`}>
         <Navbar darkMode={darkMode}/>
