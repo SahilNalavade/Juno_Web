@@ -50,11 +50,11 @@ const Home = () => {
         <main className={styles.dashboard}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between',marginRight:'30px' }}>
   <h1>Monitoring</h1>
-  <button className={styles.darkModeButton} onClick={toggleDarkMode} style={{ marginLeft: '10px' }}>
+  <button className={styles.darkModeButton} onClick={toggleDarkMode} style={{ marginLeft: '10px' ,marginBottom:'5px'}}>
     {darkMode ? (
-      <img src="/light.png" style={{ width: '24px' }} alt="Sun" />
+      <img src="/light.png" style={{ width: '30px' }} alt="Sun" />
     ) : (
-      <img src="/dark.png" style={{ width: '24px' }} alt="Moon" />
+      <img src="/dark.png" style={{ width: '30px' }} alt="Moon" />
     )}
   </button>
 </div>

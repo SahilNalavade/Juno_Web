@@ -180,3 +180,17 @@
 .navbar.dark-mode .line {
   background-color: #ffffff; 
 }
+
+.userName {
+  font-family: 'Lettera Text LL', sans-serif; 
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0px; 
+  color: #050505; /* Default color */
+}
+
+/* Add a style for dark mode */
+.navbar.dark-mode .userName {
+  color: #ffffff; /* Set the desired font color for dark mode */
+}

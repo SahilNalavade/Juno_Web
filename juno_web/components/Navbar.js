@@ -23,7 +23,8 @@ const Navbar = ({ darkMode }) => {
 
       <ul className={`${styles.navList} ${isMenuOpen ? styles.show : ''}`}>
         <li>
-          <img src='/logo2.png' alt="Logo" className={`${styles.logoImage}`} />
+        <img src={darkMode ? '/figlogo2.png' : '/figlogo1.png'} alt="Logo" className={styles.logoImage} />
+
         </li>
         <li className={router.pathname === '/overview' ? styles.selected : ''}>
           <Link href="/overview">Overview</Link>
