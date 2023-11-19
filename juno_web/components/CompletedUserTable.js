@@ -218,7 +218,7 @@ const UserTable = ({ data }) => {
           </div>
         </td>
         <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' , fontWeight:'bold' }}>{user.action_reason}</td>
-        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4', fontWeight:'bold' }}>{user.in_queue_for}</td>
+        <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4', fontWeight:'bold' }}>{user.time_to_close}</td>
         <td style={{ textAlign: 'center', borderBottom: '1px solid #E4E4E4' }}>{user.date_added_on}</td>
         <td className={styles.tableDataCell} style={{ textAlign: 'left', paddingLeft: '20px'}}>
           <p style={{ fontWeight: 'bold' }}>{user.action_taken_by.name}</p>
