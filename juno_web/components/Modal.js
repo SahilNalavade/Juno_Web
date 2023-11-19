@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '@/styles/Modal.module.css';
 
 const Modal = ({ handleClose }) => {
@@ -21,6 +21,22 @@ const Modal = ({ handleClose }) => {
       setIsFormFilled(true);
     }
   };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (event.target.classList.contains(styles.modalOverlay)) {
+        handleClose();
+      }
+    };
+
+    // Attach the event listener when the modal is mounted
+    document.addEventListener('click', handleOutsideClick);
+
+    // Remove the event listener when the modal is unmounted
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [handleClose]);
 
   return (
     <div className={styles.modalOverlay}>
