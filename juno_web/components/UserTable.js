@@ -14,7 +14,7 @@ const UserTable = ({ data }) => {
   useEffect(() => {
   
     const uniqueTriggerReasons = [
-      ...new Set(data.map((user) => user.action_reason)),
+      ...new Set(data.map((user) => user.trigger_reason)),
     ];
     setTriggerReasons(uniqueTriggerReasons);
 
