@@ -7,7 +7,7 @@ Simple dashboard showing all the users currently in the monitoring queue who nee
 
 ## Demo
 
-![Demo](/juno_web/public/logo.png)
+![Demo](/juno_web/public/Screenshots/img1.JPG)
 
 
 
