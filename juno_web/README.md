@@ -7,16 +7,14 @@ Simple dashboard showing all the users currently in the monitoring queue who nee
 
 ## Demo
 
-![Demo](/juno_web/public/Screenshots/img1.JPG)
-![Demo](/juno_web/public/Screenshots/img2.JPG)
-![Demo](/juno_web/public/Screenshots/img3.jpeg)
-![Demo](/juno_web/public/Screenshots/img4.JPEG)
-![Demo](/juno_web/public/Screenshots/img5.JPEG)
-![Demo](/juno_web/public/Screenshots/img6.JPEG)
-![Demo](/juno_web/public/Screenshots/img7.JPEG)
-![Demo](/juno_web/public/Screenshots/img8.JPEG)
-
-
+<img src="/juno_web/public/Screenshots/img1.JPG" alt="Demo" >
+<img src="/juno_web/public/Screenshots/img2.JPG" alt="Demo" >
+<img src="/juno_web/public/Screenshots/img3.jpeg" alt="Demo"  height="300">
+<img src="/juno_web/public/Screenshots/img4.jpeg" alt="Demo" height="300">
+<img src="/juno_web/public/Screenshots/img5.jpeg" alt="Demo" height="300">
+<img src="/juno_web/public/Screenshots/img6.jpeg" alt="Demo" height="300">
+<img src="/juno_web/public/Screenshots/img7.jpeg" alt="Demo" height="300">
+<img src="/juno_web/public/Screenshots/img8.jpeg" alt="Demo" height="300">
 
 ## Getting Started
 
