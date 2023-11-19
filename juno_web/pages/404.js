@@ -16,7 +16,7 @@ const NotFound = () => {
       
    
       <Link href="/">
-        <div style={{ textDecoration: 'none', padding: '10px 20px', background: '#4643EE', color: '#fff', borderRadius: '5px', marginTop: '20px', display: 'inline-block', marginTop:'20%' }}>
+        <div style={{ textDecoration: 'none', padding: '10px 20px', background: '#4643EE', color: '#fff', borderRadius: '5px', display: 'inline-block', marginTop:'15%' }}>
           Go Back Home
         </div>
       </Link>
