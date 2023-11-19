@@ -171,7 +171,7 @@
 .table {
   font-family: 'Lettera Text LL', sans-serif;
   width: 100%;
-  height: 400px;
+
   top: 253px;
   left: 306px;
   border-collapse: collapse;
@@ -194,7 +194,7 @@
 }
 
 .tableRow {
- 
+ height: 60px;
 }
 
 .tableDataCell {
