@@ -9,6 +9,7 @@ Simple dashboard showing all the users currently in the monitoring queue who nee
 
 <img src="/juno_web/public/Screenshots/img1.JPG" alt="Demo" >
 <img src="/juno_web/public/Screenshots/img2.JPG" alt="Demo" >
+<img src="/juno_web/public/Screenshots/img3.JPG" alt="Demo" >
 <img src="/juno_web/public/Screenshots/img3.jpeg" alt="Demo"  height="500">
 <img src="/juno_web/public/Screenshots/img4.jpeg" alt="Demo" height="500">
 <img src="/juno_web/public/Screenshots/img5.jpeg" alt="Demo" height="500">
