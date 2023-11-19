@@ -93,19 +93,7 @@ const UserTable = ({ data }) => {
         placeholder="Search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{
-          width: '370px',
-          height: '40px',
-          marginTop: '36px',
-          padding: '8px 16px 8px 40px',
-          borderRadius: '9px 8px 8px 9px',
-          border: '1px solid',
-          gap: '10px',
-          background: '#FFFFFF',
-          border: '#E4E4E4 solid 1px',
-          color: '#000',
-          fontFamily: "'Lettera Text LL', sans-serif",
-        }}
+        className={styles.searchInput}
       />
       {searchTerm === '' && (
         <div
