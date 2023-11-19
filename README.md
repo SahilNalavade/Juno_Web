@@ -1,12 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Project Title
-
-Simple dashboard showing all the users currently in the monitoring queue who need to be reviewed for risky behaviour
-
-## Technology Stack
-
-This project is implemented using [Next.js](https://nextjs.org/) and styled with CSS, without relying on any external UI library.
 
 ## Demo
 
@@ -19,6 +11,16 @@ This project is implemented using [Next.js](https://nextjs.org/) and styled with
 <img src="/juno_web/public/Screenshots/img6.jpeg" alt="Demo" height="500">
 <img src="/juno_web/public/Screenshots/img7.jpeg" alt="Demo" height="500">
 <img src="/juno_web/public/Screenshots/img8.jpeg" alt="Demo" height="500">
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Project Title
+
+Simple dashboard showing all the users currently in the monitoring queue who need to be reviewed for risky behaviour
+
+## Technology Stack
+
+This project is implemented using [Next.js](https://nextjs.org/) and styled with CSS, without relying on any external UI library.
 
 ## Getting Started
 
