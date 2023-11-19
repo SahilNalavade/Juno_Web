@@ -31,14 +31,14 @@ const UserTable = ({ data }) => {
 
   const sortByCriteria = (criteria) => {
     if (sortCriteria === criteria) {
-    
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else {
-   
       setSortCriteria(criteria);
       setSortOrder('asc');
     }
   };
+  
+  const customRiskOrder = ['High', 'Medium', 'Low'];
 
   useEffect(() => {
  
@@ -53,8 +53,15 @@ const UserTable = ({ data }) => {
         (filterRiskLevel ? user.risk_level === filterRiskLevel : true)
     );
 
-
-    if (sortCriteria) {
+    if (sortCriteria === 'risk_level') {
+      filtered.sort((a, b) => {
+        const aValue = customRiskOrder.indexOf(a['risk_level']);
+        const bValue = customRiskOrder.indexOf(b['risk_level']);
+  
+        return sortOrder === 'asc' ? aValue - bValue : bValue - aValue;
+      });
+    }
+    else if (sortCriteria) {
       filtered.sort((a, b) => {
         const aValue = a[sortCriteria];
         const bValue = b[sortCriteria];
