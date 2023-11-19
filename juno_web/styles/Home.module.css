@@ -26,6 +26,7 @@
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    height:100vh
   }
 
   .selectInput,
@@ -208,6 +209,7 @@
   .table {
   
     margin-left:-10px
+
   }
 
   .tableHeader {
