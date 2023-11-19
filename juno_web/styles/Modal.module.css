@@ -108,12 +108,11 @@
     
   }
   
-  .fileUAR label {
-    margin-right: 10px;
-  }
+  
   
   .fileUAR div {
     display: flex;
+    margin-left: 20px;
   }
   
   .form input[type="radio"] {

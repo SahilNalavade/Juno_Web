@@ -42,7 +42,7 @@ const Modal = ({ handleClose }) => {
             />
           </div>
           <div className={`${styles.formGroup} ${styles.fileUAR}`}>
-            <label htmlFor="fileUAR">Want to file UAR:</label>
+            <label htmlFor="fileUAR">Want to file UAR</label>
             <div>
               <label>
                 <input
@@ -52,8 +52,8 @@ const Modal = ({ handleClose }) => {
                   checked={fileUAR === 'yes'}
                   onChange={() => setFileUAR('yes')}
                 />
-                Yes
-              </label>
+                
+              </label><label style={{fontFamily:"'Lettera Text LL', sans-serif",position:'relative',marginTop:'7px',marginRight:'20px'}}>Yes</label>
               <label>
                 <input
                   type="radio"
@@ -62,8 +62,9 @@ const Modal = ({ handleClose }) => {
                   checked={fileUAR === 'no'}
                   onChange={() => setFileUAR('no')}
                 />
-                No
+             
               </label>
+              <label style={{fontFamily:"'Lettera Text LL', sans-serif",position:'relative',marginTop:'7px'}}>No</label>
             </div>
           </div>
           <div className={styles.formGroup}>
@@ -116,8 +117,9 @@ const Modal = ({ handleClose }) => {
     checked={chargeClosureFee === 'yes'}
     onChange={() => setChargeClosureFee('yes')}
   />
-  <span style={{ color: '#ADADAD' }}>Charge closure fee</span>
+  <span style={{ color: '#ADADAD' }}></span>
 </label>
+<label style={{fontFamily:"'Lettera Text LL', sans-serif",position:'relative',marginTop:'4px',color:'#777676'}}>Charge closure fee</label>
 
 <button
               type="submit"
@@ -131,7 +133,7 @@ const Modal = ({ handleClose }) => {
                 backgroundColor: isFormFilled ? '#4643EE' : '#E4E4E4',
                 border: 'none',
                 color: isFormFilled ? '#FFFFFF' : '#ADADAD',
-                marginLeft: '70px',
+                marginLeft: '50px',
               }}
             >
               Close Account
