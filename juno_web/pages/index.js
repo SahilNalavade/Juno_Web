@@ -11,6 +11,7 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false);
   const [jsonData, setJsonData] = useState({ data: [] });
   const [darkMode, setDarkMode] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   const handleTabChange = (index) => {
     setActiveTab(index);
@@ -29,7 +30,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // Fetch data from data.json
     const fetchData = async () => {
       const response = await fetch('/data.json');
       const data = await response.json();
@@ -37,31 +37,56 @@ const Home = () => {
     };
 
     fetchData();
+
+    // Check if the screen width is less than a certain threshold (e.g., 768 pixels)
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 768);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <>
       <Head>
-  <title>Monitoring Dashboard</title>
-  <meta name="description" content="A comprehensive monitoring dashboard for your data." />
-  <meta name="keywords" content="monitoring, dashboard, data, analytics" />
-  <meta name="author" content="Sahil Nalavade" />
-  <link rel="icon" href="/favicon.ico" />
-</Head>
+        {/* ... */}
+      </Head>
 
       <div className={`${styles.container} ${darkMode ? styles['dark-mode'] : ''}`}>
         <Navbar darkMode={darkMode}/>
         <main className={styles.dashboard}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between',marginRight:'30px' }}>
-  <h1>Monitoring</h1>
-  <button className={styles.darkModeButton} onClick={toggleDarkMode} style={{ marginLeft: '10px' ,marginBottom:'5px'}}>
-    {darkMode ? (
-      <img src="/light.png" style={{ width: '30px' }} alt="Sun" />
-    ) : (
-      <img src="/dark.png" style={{ width: '30px' }} alt="Moon" />
-    )}
-  </button>
-</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginRight: '30px' }}>
+            <h1>Monitoring</h1>
+            
+            {isMobileView ? (
+              <button className={styles.darkModeButton} onClick={toggleDarkMode} style={{ marginRight: '25px' , marginTop: '2px'}}>
+                {darkMode ? (
+                  <img src="/light1.png" style={{ width: '50px' }} alt="Sun" />
+                ) : (
+                  <img src="/dark2.png" style={{ width: '50px' }} alt="Moon" />
+                )}
+              </button>
+            ) : <button className={styles.darkModeButton} onClick={toggleDarkMode}   style={{
+              marginRight: '10px',
+              marginTop: '2px',
+              position: 'relative',
+              top: '40px', right:'170px'// Adjust this value as needed
+            }}
+          >
+          
+                {darkMode ? (
+                  <img src="/light1.png" style={{ width: '50px' }} alt="Sun" />
+                ) : (
+                  <img src="/dark2.png" style={{ width: '50px' }} alt="Moon" />
+                )}
+              </button>}
+            
+          </div>
           <div className={styles.tabs}>
             <ul className={styles.tabList}>
           <li className={activeTab === 0 ? `${styles.tabListItem} ${styles.activeTab}` : styles.tabListItem} onClick={() => handleTabChange(0)}>
