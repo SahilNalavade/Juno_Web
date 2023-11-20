@@ -68,7 +68,7 @@ const Home = () => {
                 {darkMode ? (
                   <img src="/light1.png" style={{ width: '50px' }} alt="Sun" />
                 ) : (
-                  <img src="/dark2.png" style={{ width: '50px' }} alt="Moon" />
+                  <img src="/dark1.png" style={{ width: '50px' }} alt="Moon" />
                 )}
               </button>
             ) : <button className={styles.darkModeButton} onClick={toggleDarkMode}   style={{
@@ -82,7 +82,7 @@ const Home = () => {
                 {darkMode ? (
                   <img src="/light1.png" style={{ width: '50px' }} alt="Sun" />
                 ) : (
-                  <img src="/dark2.png" style={{ width: '50px' }} alt="Moon" />
+                  <img src="/dark1.png" style={{ width: '50px' }} alt="Moon" />
                 )}
               </button>}
             
