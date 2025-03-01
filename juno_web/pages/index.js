@@ -61,7 +61,7 @@ const Home = () => {
         <Navbar darkMode={darkMode}/>
         <main className={styles.dashboard}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginRight: '30px' }}>
-            <h1>Monitoring</h1>
+            <h1>MonitoringJuno</h1>
             
             {isMobileView ? (
               <button className={styles.darkModeButton} onClick={toggleDarkMode} style={{ marginRight: '25px' , marginTop: '2px'}}>
